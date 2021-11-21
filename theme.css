@@ -1,0 +1,307 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font: Arial 14px;
+    background-color: #fff;
+}
+
+#contentwrap {
+    width: 100%;
+}
+
+#headerwrap {
+    width: 82%;
+    height: 11em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1em auto;
+}
+
+#logolinkwrap {
+    order: 0;
+    width: 120px;
+}
+
+#logowrap {
+    width: 93px;
+    margin: 0 auto;
+}
+
+#linkwrap {
+    margin-left: 2px;
+}
+
+#titletext {
+    order: 1;
+    width: 13.5em;
+    margin: 0 auto;
+    margin-bottom: 0.4em;
+    font-size: 5em;
+}
+
+#titletext #full, #titletext #pint {
+    margin: 0 auto;
+    font-size: 1em;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+#titletext #reg {
+    position: absolute;
+    top: 2em;
+    margin-left: 0.2em;
+    font-size: 0.3em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#titletext #pint {
+    color: #EAD351;
+}
+
+#titletext #beer {
+    font-size: 0.5em;
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+
+#pghcircle {
+    order: 2;
+    display: table;
+    border: 5px solid black;
+    border-radius: 50%;
+    /* box-shadow: inset 0 0 0 8px white, inset 0 0 0 10px black; */
+    /* And so on and so forth, if you want border-ception */
+    margin: 0 auto;
+    width: 5em;
+    height: 2em;
+    position: relative;
+    font-size: 2em;
+    font-family: 'Do Hyeon', sans-serif;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#pghcircle p {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#beershowcase {
+    width: 80%;
+    /* height: 11em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em auto;
+}
+
+#beershowcase h2 {
+    margin: 0 auto;
+}
+
+#circlewrap {
+    width: 100%;
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: middle;
+    margin: 1em auto;
+}
+
+.beercircle {
+    margin: 1em 5em;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 150px;
+    height: 150px;
+}
+
+.beercircle .gifpopout {
+    width: 45px;
+    opacity: 0;
+    position: absolute;
+    top: -60%;
+    left: 10%;
+    right: 5%;
+    background-color: #fff;
+    transition: all 0.3s linear;
+}
+
+.beercircle:hover .gifpopout {
+    display: inline-block;
+    opacity: 100;
+    left: -60%;
+    cursor: pointer;
+}
+
+.beercircle .gifpopout h4 {
+    width: 10em;
+    display: inline-block;
+    transform: rotate(-90deg) translateX(-125%);
+    transform-origin: bottom left;
+    /* transform: rotate(-90deg); */
+}
+
+.beercircle .gifpopout:hover h4 {
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: #e6e6e6;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    z-index: 101;
+    opacity: 0.8;
+    visibility: hidden;
+}
+
+#overlay.show {
+    opacity: .8;
+    visibility: visible;
+    z-index: 101;
+}
+
+#closeoverlay {
+    position: absolute;
+    visibility: hidden;
+    z-index: 102;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+#closeoverlay:hover {
+    opacity: 1;
+}
+
+#closeoverlay:before, #closeoverlay:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+#closeoverlay::before {
+    transform: rotate(45deg);
+}
+
+#closeoverlay::after {
+    transform: rotate(-45deg);
+}
+
+#textpopup {
+    display: none;
+    position: fixed;
+    border-top: 3px solid white;
+    height: 350px;
+    width: 500px;
+    left: 15%;
+    top: 15%;
+    z-index: 101;
+    transform: translate(0, 0);
+    color: rgb(197, 197, 197);
+    background-color: #fff;
+}
+
+#beerpopup {
+    display: none;
+    position: fixed;
+    height: 700px;
+    width: 321px;
+    left: 50%;
+    top: 10%;
+    z-index: 101;
+    transform: translate(-50%, 0);
+}
+
+.beercircle img {
+    display: block;
+    border-radius: 50%;
+    transition: all 1s linear;
+}
+
+.beercircle h3 {
+    display: block;
+    margin: 0 auto;
+}
+
+.beercircle:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+#locationswrap {
+    margin: 5em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 65%;
+    height: 40em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 2em;
+}
+
+#locationselectwrap {
+    position: relative;
+    width: 30%;
+    height: 99.9%;
+    margin-left: 5%;
+    overflow-y: scroll;
+    order: 0;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-right: 1em;
+}
+
+.location:hover {
+    cursor: pointer;
+    background-color: #ead35136;
+}
+
+.location img {
+    order: 0;
+    margin-left: 1em;
+    margin-right: 1.5em;
+    margin-top: 0.5em;
+}
+
+.location .locationtextwrap {
+    order: 1;
+}
+
+
+#mapwrap {
+    width: 70%;
+    order: 1;
+    margin-left: 2.5em;
+    margin-top: -2.5em;
+}
